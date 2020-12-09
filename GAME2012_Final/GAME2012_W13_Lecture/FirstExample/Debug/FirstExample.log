@@ -1,0 +1,20 @@
+﻿  02_Blending.cpp
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(69,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(81,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(155,30): warning C4244: '인수': 'int'에서 'const _Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=GLfloat
+          ]
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(156,30): warning C4244: '인수': 'int'에서 'const _Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=GLfloat
+          ]
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(201,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(366,1): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(377,1): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(441,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\Shape.h(465,1): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\FirstExample\02_Blending.cpp(192,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+  FirstExample.vcxproj -> D:\Coding\3Semester\3d 그래픽\FinalProject\GAME2012_W13_Lecture (2)\GAME2012_W13_Lecture\Debug\FirstExample.exe
