@@ -83,6 +83,7 @@ void resetView()
 // Shapes. Recommend putting in a map
 Cube g_cube(3);
 Prism g_prism(24);
+Cone g_cone(24);
 //Plane g_plane;
 Grid g_grid(20,3); // New UV scale parameter. Works with texture now.
 
@@ -189,8 +190,9 @@ void init(void)
 	glBindVertexArray(0); // Can optionally unbind the vertex array to avoid modification.
 
 	// Change shape data.
-	g_prism.SetMat(0.1, 16);
+	g_prism.SetMat(0.1, 1);
 	g_grid.SetMat(0.0, 16);
+	g_cube.SetMat(0.0, 1);
 
 	// Enable depth test and blend.
 	glEnable(GL_DEPTH_TEST);
@@ -308,18 +310,31 @@ void tileMap(char key, glm::vec3 position)
 		g_prism.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
 		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, 0.0f, glm::vec3(position.x + 0.5f , 0.0f, -(position.y + 0.5f)));
 		glDrawElements(GL_TRIANGLES, g_prism.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		
 		glBindTexture(GL_TEXTURE_2D, secondTx);
 		g_prism.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
 		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, 0.0f, glm::vec3(position.x + 0.5f, 1.0f, -(position.y + 0.5f)));
 		glDrawElements(GL_TRIANGLES, g_prism.NumIndices(), GL_UNSIGNED_SHORT, 0);
-		glBindTexture(GL_TEXTURE_2D, secondTx);
+		
+		glBindTexture(GL_TEXTURE_2D, secondTx);		
 		g_prism.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
 		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, 0.0f, glm::vec3(position.x + 0.5f, 2.0f, -(position.y + 0.5f)));
 		glDrawElements(GL_TRIANGLES, g_prism.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		
 		glBindTexture(GL_TEXTURE_2D, secondTx);
 		g_prism.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
 		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, 0.0f, glm::vec3(position.x + 0.5f, 3.0f, -(position.y + 0.5f)));
 		glDrawElements(GL_TRIANGLES, g_prism.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_prism.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.25f, 2.0f, 1.25f), X_AXIS, 0.0f, glm::vec3(position.x + 0.5f, 4.0f, -(position.y + 0.5f)));
+		glDrawElements(GL_TRIANGLES, g_prism.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cone.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.25f, 2.0f, 1.25f), X_AXIS, 0.0f, glm::vec3(position.x + 0.5f, 6.0f, -(position.y + 0.5f)));
+		glDrawElements(GL_TRIANGLES, g_cone.NumIndices(), GL_UNSIGNED_SHORT, 0);
 		break;
 
 	}

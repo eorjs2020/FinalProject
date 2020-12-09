@@ -376,29 +376,7 @@ struct Prism : public Shape
 			shape_vertices.push_back(0.0f + 1.0f * sin(theta));
 			theta += 2 * PI / sides;
 		}
-		//float theta = 0.0f;
-		//// Top face.
-		//shape_vertices.push_back(0.5f);
-		//shape_vertices.push_back(1.0f);
-		//shape_vertices.push_back(0.5f);
-		//for (int i = 0; i < sides; ++i)
-		//{
-		//	shape_vertices.push_back(0.5f + 0.5f * cos(theta));
-		//	shape_vertices.push_back(1.0f);
-		//	shape_vertices.push_back(0.5f + 0.5f * sin(theta));
-		//	theta += 2 * PI / sides;
-		//}
-		//// Bottom face.
-		//shape_vertices.push_back(0.5f);
-		//shape_vertices.push_back(0.0f);
-		//shape_vertices.push_back(0.5f);
-		//for (int i = 0; i < sides; ++i)
-		//{
-		//	shape_vertices.push_back(0.5f + 0.5f * cos(theta));
-		//	shape_vertices.push_back(0.0f);
-		//	shape_vertices.push_back(0.5f + 0.5f * sin(theta));
-		//	theta += 2 * PI / sides;
-		//}
+		
 		// Indices now.
 		// Bottom face.
 		for (int i = sides + 1; i < sides * 2; i++)
@@ -440,8 +418,8 @@ struct Prism : public Shape
 		shape_indices.push_back(sides);
 		for (int i = 0; i < shape_vertices.size(); i += 3)
 		{
-			shape_uvs.push_back(0); // No texture for grid so value doesn't matter.
-			shape_uvs.push_back(0);
+			shape_uvs.push_back(shape_vertices[i] );
+			shape_uvs.push_back(shape_vertices[i + 1]);
 		}
 		ColorShape(1.0f, 1.0f, 1.0f);
 		CalcAverageNormals(shape_indices, shape_indices.size(), shape_vertices, shape_vertices.size());
@@ -454,19 +432,20 @@ struct Cone : public Shape
 	{
 		float theta = 0.0f;
 		// Bottom face.
-		shape_vertices.push_back(0.5f);
 		shape_vertices.push_back(0.0f);
-		shape_vertices.push_back(0.5f);
+		shape_vertices.push_back(0.0f);
+		shape_vertices.push_back(0.0f);
 		for (int i = 0; i < sides; ++i)
 		{
-			shape_vertices.push_back(0.5f + 0.5f * cos(theta));
+			shape_vertices.push_back(0.0f + 1.0f * cos(theta));
 			shape_vertices.push_back(0.0f);
-			shape_vertices.push_back(0.5f + 0.5f * sin(theta));
+			shape_vertices.push_back(0.0f + 1.0f * sin(theta));
 			theta += 2 * PI / sides;
 		}
-		shape_vertices.push_back(0.5f);
+		shape_vertices.push_back(0.0f);
 		shape_vertices.push_back(1.0f);
-		shape_vertices.push_back(0.5f);
+		shape_vertices.push_back(0.0f);
+
 		// Indices now. Bottom face.
 		for (int i = 1; i < sides; i++)
 		{
@@ -487,6 +466,11 @@ struct Cone : public Shape
 		shape_indices.push_back(sides);
 		shape_indices.push_back(sides + 1);
 		shape_indices.push_back(1);
+		for (int i = 0; i < shape_vertices.size(); i += 3)
+		{
+			shape_uvs.push_back(shape_vertices[i]);
+			shape_uvs.push_back(shape_vertices[i + 1]);
+		}
 		ColorShape(1.0f, 1.0f, 1.0f);
 		CalcAverageNormals(shape_indices, shape_indices.size(), shape_vertices, shape_vertices.size());
 	}
