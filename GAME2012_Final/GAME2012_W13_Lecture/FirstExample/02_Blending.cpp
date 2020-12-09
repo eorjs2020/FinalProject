@@ -69,6 +69,8 @@ AmbientLight aLight(glm::vec3(1.0f, 1.0f, 1.0f),	// Ambient colour.
 	1.0f);							// Ambient strength.
 std::array<std::array<char, 21>, 21> tilemap;
 void timer(int);
+void Wall(int x, int y);
+
 
 void resetView()
 {
@@ -286,7 +288,58 @@ void tileMap(char key, glm::vec3 position)
 		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 2.0f, -(position.y)));
 		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
 		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
-		transformObject(glm::vec3(0.5f, 0.5f, 0.5f), X_AXIS, -90.0f, glm::vec3(position.x + 0.5f, 3.0f, -(position.y-0.5f)));
+		transformObject(glm::vec3(0.5f, 0.5f, 0.5f), X_AXIS, -90.0f, glm::vec3(position.x, 3.0f, -(position.y + 0.5f)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		break;
+	case '9':
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 0.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 1.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 2.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(0.5f, 0.5f, 0.5f), X_AXIS, -90.0f, glm::vec3(position.x, 3.0f, -(position.y - 0.5f)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		break;
+	case '8':
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 0.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 1.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 2.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(0.5f, 0.5f, 0.5f), X_AXIS, -90.0f, glm::vec3(position.x, 3.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		break;
+	case '7':
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 0.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 1.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		glBindTexture(GL_TEXTURE_2D, secondTx);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 2.0f, -(position.y)));
+		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+		transformObject(glm::vec3(0.5f, 0.5f, 0.5f), X_AXIS, -90.0f, glm::vec3(position.x + 0.5f, 3.0f, -(position.y - 0.5f)));
 		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
 		break;
 	case'1':
@@ -325,6 +378,29 @@ void tileMap(char key, glm::vec3 position)
 	}
 	
 }
+
+//Wall Function
+void Wall(int x, int y)
+{
+	glBindTexture(GL_TEXTURE_2D, secondTx);
+	g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+	transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 0.0f, -(position.y)));
+	glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+	glBindTexture(GL_TEXTURE_2D, secondTx);
+	g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+	transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 1.0f, -(position.y)));
+	glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+	glBindTexture(GL_TEXTURE_2D, secondTx);
+	g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+	transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 2.0f, -(position.y)));
+	glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+	g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+	transformObject(glm::vec3(0.5f, 0.5f, 0.5f), X_AXIS, -90.0f, glm::vec3(position.x + 0.5f, 3.0f, -(position.y - 0.5f)));
+	glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+}
+
+
+
 
 //---------------------------------------------------------------------
 //
