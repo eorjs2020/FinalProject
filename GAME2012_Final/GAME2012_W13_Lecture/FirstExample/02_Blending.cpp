@@ -67,8 +67,11 @@ GLint width, height, bitDepth;
 // Light variables.
 AmbientLight aLight(glm::vec3(1.0f, 1.0f, 1.0f),	// Ambient colour.
 	1.0f);							// Ambient strength.
-SpotLight sLight(glm::vec3(5.0f, 2.0f, -5.0f),
-	glm::vec3(1.0f, 0.f, 0.f), 15.f, glm::vec3(5.f, -1.f, -5.f), 1.f);
+SpotLight sLight(glm::vec3(5.0f, 2.0f, -5.0f), // position 
+	glm::vec3(1.0f, 0.f, 0.f), //color
+	15.f, //strength
+	glm::vec3(5.f, -1.f, -5.f), //direction
+	1.f);
 
 std::array<std::array<char, 21>, 21> tilemap;
 void timer(int);
