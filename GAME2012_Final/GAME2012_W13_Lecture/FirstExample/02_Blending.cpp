@@ -18,6 +18,7 @@ using namespace std;
 #include <iostream>
 #include <fstream>
 #include <array>
+#include <string>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -67,11 +68,17 @@ GLint width, height, bitDepth;
 // Light variables.
 AmbientLight aLight(glm::vec3(1.0f, 1.0f, 1.0f),	// Ambient colour.
 	1.0f);							// Ambient strength.
-SpotLight sLight(glm::vec3(5.0f, 2.0f, -5.0f), // position 
-	glm::vec3(1.0f, 0.f, 0.f), //color
-	15.f, //strength
-	glm::vec3(5.f, -1.f, -5.f), //direction
-	1.f);
+
+PointLight pLights[10] = { { glm::vec3(2.5f, 3.0f, -2.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f },
+						  { glm::vec3(2.5f, 3.0f, -17.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f },
+{ glm::vec3(17.5f, 3.0f, -17.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f }, 
+{ glm::vec3(17.5f, 3.0f, -2.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f }, //  4 corner of maze 
+{ glm::vec3(8.5, 3.0f, 0.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f }, 
+{ glm::vec3(12.5, 3.0f, 0.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f },
+{ glm::vec3(8.5, 3.0f, -20.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f },
+{ glm::vec3(12.5, 3.0f, -20.5f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f },  // around gate 
+{ glm::vec3(7.5f, 2.5f, -7.3f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f }, 
+{ glm::vec3(8.5f, 2.5f, -11.3f), 5.0f, glm::vec3(0.2f, 0.4f, 1.0f), 10.0f }, };
 
 std::array<std::array<char, 21>, 21> tilemap;
 void timer(int);
@@ -205,14 +212,21 @@ void init(void)
 	// Setting ambient Light.
 	glUniform3f(glGetUniformLocation(program, "aLight.ambientColour"), aLight.ambientColour.x, aLight.ambientColour.y, aLight.ambientColour.z);
 	glUniform1f(glGetUniformLocation(program, "aLight.ambientStrength"), aLight.ambientStrength);
-	//SpotLight
-	glUniform3f(glGetUniformLocation(program, "sLight.base.diffuseColour"), sLight.diffuseColour.x, sLight.diffuseColour.y, sLight.diffuseColour.z);
-	glUniform1f(glGetUniformLocation(program, "sLight.base.diffuseStrength"), sLight.diffuseStrength);
 
-	glUniform3f(glGetUniformLocation(program, "sLight.position"), sLight.position.x, sLight.position.y, sLight.position.z);
+	for (int i = 0; i < sizeof(pLights); i++) {
+		
+		std::string count, a, b = "pLights[";
 
-	glUniform3f(glGetUniformLocation(program, "sLight.direction"), sLight.direction.x, sLight.direction.y, sLight.direction.z);
-	glUniform1f(glGetUniformLocation(program, "sLight.edge"), sLight.edgeRad);
+		count = to_string(i); 
+		a = b + count; 
+		
+		glUniform3f(glGetUniformLocation(program, (a + "].base.diffuseColour").data()), pLights[i].diffuseColour.x, pLights[i].diffuseColour.y, pLights[i].diffuseColour.z);
+		glUniform1f(glGetUniformLocation(program, (a + "].base.diffuseStrength").data()), pLights[i].diffuseStrength);
+		glUniform3f(glGetUniformLocation(program, (a + "].position").data()), pLights[i].position.x, pLights[i].position.y, pLights[i].position.z);
+		glUniform1f(glGetUniformLocation(program, (a + "].constant").data()), pLights[i].constant);
+		glUniform1f(glGetUniformLocation(program, (a + "].linear").data()), pLights[i].linear);
+		glUniform1f(glGetUniformLocation(program, (a + "].exponent").data()), pLights[i].exponent);
+	}
 
 	vao = 0;
 	glGenVertexArrays(1, &vao);
@@ -424,6 +438,7 @@ void tileMap(char key, glm::vec3 position)
 		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
 		transformObject(glm::vec3(1.0f, 1.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(position.x, 3.0f, -(position.y)));
 		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
+
 		break;
 	case'e':
 		g_cube.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);

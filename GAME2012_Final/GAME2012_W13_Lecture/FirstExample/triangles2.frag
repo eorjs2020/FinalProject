@@ -1,5 +1,9 @@
 #version 430 core
 
+#ifndef NUM_POINT_LIGHTS
+    #define NUM_POINT_LIGHTS 10
+#endif
+
 in vec4 colour;
 in vec2 texCoord;
 in vec3 normal;
@@ -16,6 +20,15 @@ struct AmbientLight
 {
 	vec3 ambientColour;
 	float ambientStrength;
+};
+
+struct PointLight
+{
+	Light base;
+	vec3 position;
+	float constant;
+	float linear;
+	float exponent;
 };
 
 struct SpotLight
@@ -37,6 +50,7 @@ uniform sampler2D texture0;
 uniform vec3 eyePosition;
 
 uniform AmbientLight aLight;
+uniform PointLight pLights[NUM_POINT_LIGHTS];
 uniform SpotLight sLight;
 uniform Material mat;
 
@@ -61,6 +75,20 @@ vec4 calcLightByDirection(Light l, vec3 dir)
 	return (diffuse + specular);
 }
 
+vec4 calcPointLight(PointLight p)
+{
+	vec3 direction = fragPos - p.position;
+	float distance = length(direction);
+	direction = normalize(direction);
+		
+	vec4 colour = calcLightByDirection(p.base, direction);
+	float attenuation = p.exponent * distance * distance +
+						p.linear * distance +
+						p.constant;
+
+	return (colour / attenuation);
+}
+
 vec4 calcSpotLight(SpotLight s)
 {
 	vec4 colour = vec4(0,0,0,0);
@@ -83,6 +111,19 @@ void main()
 	
 	vec4 ambient = vec4(aLight.ambientColour, 1.0f) * aLight.ambientStrength;
 	calcColour += ambient;
+	
+	calcColour += calcPointLight(pLights[0]);
+	calcColour += calcPointLight(pLights[1]);
+	calcColour += calcPointLight(pLights[2]);
+	calcColour += calcPointLight(pLights[3]);
+	calcColour += calcPointLight(pLights[4]);
+	calcColour += calcPointLight(pLights[5]);
+	calcColour += calcPointLight(pLights[6]);
+	calcColour += calcPointLight(pLights[7]);
+	calcColour += calcPointLight(pLights[8]);
+	calcColour += calcPointLight(pLights[9]);
+
+
 	calcColour += calcSpotLight(sLight);
 	frag_colour = texture(texture0, texCoord) * vec4(colour) * calcColour;
 }

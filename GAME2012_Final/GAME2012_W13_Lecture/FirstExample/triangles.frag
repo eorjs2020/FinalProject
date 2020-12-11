@@ -124,7 +124,7 @@ void main()
 	vec4 ambient = vec4(aLight.ambientColour, 1.0f) * aLight.ambientStrength;
 	calcColour += ambient;
 	calcColour += calcDirectionalLight();
-	for (int i = 0; i < NUM_POINT_LIGHTS; i++)
+	for (int i = 0; i <= NUM_POINT_LIGHTS; i++)
 		calcColour += calcPointLight(pLights[i]);
 	calcColour += calcSpotLight(sLight);
 	
