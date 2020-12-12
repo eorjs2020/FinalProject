@@ -1,0 +1,42 @@
+﻿F:\Program Files\Microsoft\VisualStudio\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: 중간 디렉터리(Debug\)에 다른 프로젝트(FirstExample.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  GAME2012_Final_Shular_Lee.cpp
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(69,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(81,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(155,30): warning C4244: '인수': 'int'에서 'const _Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=GLfloat
+          ]
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(156,30): warning C4244: '인수': 'int'에서 'const _Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=GLfloat
+          ]
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(201,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(458,1): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(469,1): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(511,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(535,1): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\Shape.h(561,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\FirstExample\GAME2012_Final_Shular_Lee.cpp(255,23): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+  LoadShaders.cpp
+  코드를 생성하고 있습니다...
+LINK : warning LNK4098: 'LIBCMTD' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+glew_static_vs2010_d.lib(glew.obj) : warning LNK4099: 'vc100.pdb' PDB를 'glew_static_vs2010_d.lib(glew.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_callbacks.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_callbacks.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_cursor.obj) : warning LNK4099: '' PDB를 'freeglut_static_vs2010_d.lib(freeglut_cursor.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_display.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_display.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_font.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_font.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_font_data.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_font_data.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_init.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_init.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_input_devices.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_input_devices.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_joystick.obj) : warning LNK4099: '' PDB를 'freeglut_static_vs2010_d.lib(freeglut_joystick.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_main.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_main.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_menu.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_menu.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_spaceball.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_spaceball.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_state.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_state.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_stroke_mono_roman.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_stroke_mono_roman.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_stroke_roman.obj) : warning LNK4099: '' PDB를 'freeglut_static_vs2010_d.lib(freeglut_stroke_roman.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_structure.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_structure.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_static_vs2010_d.lib(freeglut_window.obj) : warning LNK4099: 'vc100.pdb' PDB를 'freeglut_static_vs2010_d.lib(freeglut_window.obj)' 또는 'D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\vc100.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  FirstExample.vcxproj -> D:\Coding\3Semester\3d 그래픽\ML_FINAL\FinalProject\GAME2012_Final\GAME2012_Final_Shular_Lee\Debug\GAME2012_Final_Shular_Lee.exe
