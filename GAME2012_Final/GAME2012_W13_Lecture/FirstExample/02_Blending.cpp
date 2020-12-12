@@ -99,6 +99,8 @@ void resetView()
 Cube g_cube(1);
 Prism g_prism(24);
 Cone g_cone(24);
+Pyra g_pyra(1);
+Pyra g_pyra2(1);
 //Plane g_plane;
 Grid g_grid(20,3); // New UV scale parameter. Works with texture now.
 
@@ -530,7 +532,8 @@ void tileMap(char key, glm::vec3 position)
 		glDrawElements(GL_TRIANGLES, g_cube.NumIndices(), GL_UNSIGNED_SHORT, 0);
 		break;
 	}
-	
+
+
 }
 
 //Wall Function
@@ -587,7 +590,15 @@ void display(void)
 			
 		}
 	}
-	
+	glBindTexture(GL_TEXTURE_2D, secondTx);
+	g_pyra.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+	transformObject(glm::vec3(2.3f, 4.0f, 1.0f), X_AXIS, -90.0f, glm::vec3(8.0f, 4.0f, -7.0f));
+	glDrawElements(GL_TRIANGLES, g_pyra.NumIndices(), GL_UNSIGNED_SHORT, 0);
+
+	glBindTexture(GL_TEXTURE_2D, secondTx);
+	g_pyra2.BufferShape(&ibo, &points_vbo, &colors_vbo, &uv_vbo, &normals_vbo, program);
+	transformObject(glm::vec3(2.3f, 4.0f, 1.0f), YZ_AXIS, 180.0f, glm::vec3(8.0f, 4.0f, -11.0f));
+	glDrawElements(GL_TRIANGLES, g_pyra.NumIndices(), GL_UNSIGNED_SHORT, 0);
 	
 	glBindVertexArray(0); // Done writing.
 	glutSwapBuffers(); // Now for a potentially smoother render.

@@ -349,6 +349,98 @@ struct Cube : public Shape
 	}
 };
 
+struct Pyra : public Shape
+{
+	Pyra(int scale)
+	{
+		shape_indices = {
+			// Front.
+			0, 5, 6,
+			6, 3, 0,
+			// Back.
+			8, 9, 10,
+			10, 11, 8,
+			// Left.
+			12, 13, 14,
+			14, 15, 12,
+			// Top.
+			19, 17, 16,
+			16, 17, 19,
+			// Bottom.	
+			23, 21, 20,
+			20, 21, 23
+		};
+		shape_vertices = {
+			// Front.
+			0.0f, 0.0f, 1.0f,		// 0.
+			1.0f, 0.0f, 1.0f,		// 1.
+			1.0f, 1.0f, 1.0f,		// 2.
+			0.0f, 1.0f, 1.0f,		// 3.
+			// Right.
+			1.0f, 0.0f, 1.0f,		// 1. 4
+			1.0f, 0.0f, 0.0f,		// 5. 5
+			1.0f, 1.0f, 0.0f,		// 6. 6
+			1.0f, 1.0f, 1.0f,		// 2. 7
+			// Back.
+			1.0f, 0.0f, 0.0f,		// 5. 8
+			0.0f, 0.0f, 0.0f,		// 4. 9
+			0.0f, 1.0f, 0.0f,		// 7. 10
+			1.0f, 1.0f, 0.0f,		// 6. 11
+			// Left.
+			0.0f, 0.0f, 0.0f,		// 4. 12
+			0.0f, 0.0f, 1.0f,		// 0. 13
+			0.0f, 1.0f, 1.0f,		// 3. 14
+			0.0f, 1.0f, 0.0f,		// 7. 15
+			// Top.
+			0.0f, 1.0f, 0.0f,		// 7. 16
+			0.0f, 1.0f, 1.0f,		// 3. 17
+			1.0f, 1.0f, 1.0f,		// 2. 18
+			1.0f, 1.0f, 0.0f,		// 6. 19
+			// Bottom.
+			0.0f, 0.0f, 0.0f,		// 4. 20
+			1.0f, 0.0f, 0.0f,		// 5. 21
+			1.0f, 0.0f, 1.0f,		// 1. 22
+			0.0f, 0.0f, 1.0f		// 0. 23
+		};
+		shape_uvs = {
+			// Front.
+			0.0f, 0.0f, 	// 0.
+			1.0f, 0.0f, 	// 1.
+			1.0f, 1.0f, 	// 2.
+			0.0f, 1.0f,		// 3.
+			// Right.
+			0.0f, 0.0f, 	// 1.
+			1.0f, 0.0f, 	// 5.
+			1.0f, 1.0f, 	// 6.
+			0.0f, 1.0f,		// 2.
+			// Back.
+			0.0f, 0.0f, 	// 5.
+			1.0f, 0.0f, 	// 4.
+			1.0f, 1.0f,		// 7.
+			0.0f, 1.0f,		// 6.
+			// Left.
+			0.0f, 0.0f,		// 4.
+			1.0f, 0.0f,		// 0.
+			1.0f, 1.0f,		// 3.
+			0.0f, 1.0f,		// 7.
+			// Top.
+			1.0f, 1.0f,		// 7.
+			1.0f, 0.0f,		// 3.
+			1.0f, 1.0f,		// 2.
+			0.0f, 1.0f,		// 6.
+			// Bottom.
+			0.0f, 0.0f,		// 4.
+			1.0f, 0.0f,		// 5.
+			1.0f, 1.0f,		// 1.
+			0.0f, 1.0f		// 0.
+		};
+		for (unsigned i = 0; i < shape_uvs.size(); i++)
+			shape_uvs[i] *= scale;
+		ColorShape(1.0f, 0.0f, 0.0f);
+		CalcAverageNormals(shape_indices, shape_indices.size(), shape_vertices, shape_vertices.size());
+	}
+};
+
 struct Prism : public Shape
 {
 	Prism(int sides)
